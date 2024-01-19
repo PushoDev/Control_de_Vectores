@@ -11,5 +11,8 @@ $routes->get('/', 'Home::index');
 //Metodos del login
 $routes->post('home/login', 'Home::login');
 
+// Salir del proyecto
+$routes->get('/logout', 'Home::logout');
+
 #Pantalla Principal del C.R.U.D para trabajo de los usuarios
-$routes->get('/inventario/home.php', 'Home::inventario');
+$routes->get('/inventario/resumen_general', 'Home::resumen_general');

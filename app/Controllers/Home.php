@@ -9,10 +9,21 @@ class Home extends BaseController
     {
         return view('login');
     }
+
+    #Salir del Proyecto
+    public function logout()
+    {
+        // Destruir y salir de la sesión
+        $session = session();
+        $session->destroy();
+
+        // Redirigir al formulario de inicio de sesión o sea al login
+        return redirect()->to('/');
+    }
     
     #Inventario Resumen de todo lo que pide
-    public function inventario()
+    public function resumen_general()
     {
-        
+        return view('inventario/home');
     }
 }
