@@ -38,7 +38,7 @@
             </div>
             <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                 <figure>
-                    <img src="assets/img/logo.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
+                    <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
                 <p class="text-center" style="padding-top: 15px;">Sistema Bibliotecario</p>
             </div>
@@ -92,12 +92,12 @@
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
+                   <img src="<?php echo base_url('assets/img/user01.png'); ?>" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
                 </li>
-                <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                <li  class="tooltips-general exit-system-button" data-href="<?= site_url('/logout'); ?>" data-placement="bottom" title="Salir del sistema">
                     <i class="zmdi zmdi-power"></i>
                 </li>
                 <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
@@ -206,12 +206,12 @@
                     <div class="col-xs-12 col-sm-6">
                         <h4 class="all-tittles">Desarrollador</h4>
                         <ul class="list-unstyled">
-                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Luis Alberto Guisado <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i></li>
+                            <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Luis Alberto Guisado (Pusho.Dev) <i class="zmdi zmdi-facebook zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-github zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-twitter zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-linkedin zmdi-hc-fw footer-social"></i><i class="zmdi zmdi-blogger zmdi-hc-fw footer-social"></i></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright full-reset all-tittles">© 2023 Pusho.Dev</div>
+            <div class="footer-copyright full-reset all-tittles">© 2023 PuSchoft | Manzanillo - Cuba</div>
         </footer>
     </div>
 </body>

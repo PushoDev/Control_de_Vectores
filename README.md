@@ -1,3 +1,8 @@
+# Proyecto en Desarrollo (Evaluativo)
+Invitar desarrollador de MeSoft
+Facultad de Ciencias Médicas de Manzanillo-Cuba
+"Celia Sáncehez Manduley"
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
