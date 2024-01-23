@@ -2,24 +2,12 @@
 
 namespace App\Controllers;
 
-// Importar Modelos para trabajo con DataBase
-// Usuarios
 use App\Models\TUsuarios;
 
 class Home extends BaseController
 {
-    #Salir del Proyecto
-    public function logout()
-    {
-        // Destruir y salir de la sesión
-        $session = session();
-        $session->destroy();
- 
-        // Redirigir al formulario de inicio de sesión o sea al login
-        return redirect()->to('/');
-    }
-
-    #Inicio
+    
+    // Página de Inicio (Login)
     public function index(): string
     {
         $mensaje = session('mensaje');
@@ -27,6 +15,7 @@ class Home extends BaseController
     }
 
     // Procesar datos en el Login
+    // Procesar datos de inicio de sesión
     public function login()
     {
         // Obtener datos del formulario
@@ -38,40 +27,50 @@ class Home extends BaseController
 
         $datosUsuario = $Usuario->obtenerUsuario(['usuario' => $usuario]);
         
-        // Condicion en caso de obtaner datos correctos
+
         if (count($datosUsuario) > 0 && password_verify("$password", $datosUsuario[0]['password'])) {
 
             // Iniciar sesión
             $session = session();
             $session->set([
-                "id" => $datosUsuario[0]['id_usuario'],
-                "nombre" => $datosUsuario[0]['nombre'],
-                "username" => $datosUsuario[0]['usuario'],
-                "rol" => $datosUsuario[0]['type_usuario'],
+                "usuario_id" => $datosUsuario[0]['id_usuario'],
+                "usuario_nombre" => $datosUsuario[0]['nombre'],
+                "usuario" => $datosUsuario[0]['usuario'],
+                "type_usuario" => $datosUsuario[0]['type_usuario'],
             ]);
             
             // Redirigir a la pantalla de administración
-            return redirect()->to(base_url('/inventario/home'));
+            return redirect()->to(base_url('/inventario/resumen_general'));
         } 
         else 
         {
             // Credenciales incorrectas, mostrar mensaje de error
             return redirect()->to(base_url('/'))->with('mensaje', '0');
-        }        
+        }
     }
 
-   
-    
-    #Inventario Resumen de todo lo que pide
+
+    // Página de Resumen General
     public function resumen_general()
     {
-        // Verficar usuarios auth
+        // Verificar usuarios auth
         $session = session();
-        if (!$session ->has('id')) {
-            return redirect() ->to('/');
+        if (!$session->has('id_usuario')) {
+            return redirect()->to('/');
         }
 
-        // Pantalla del Resumen Gral del Proyecto
-        return view('inventario/home');
+        // Pantalla del Resumen General del Proyecto
+        return view('/inventario/home');
+    }
+
+    // Salir del Proyecto
+    public function logout()
+    {
+        // Destruir y salir de la sesión
+        $session = session();
+        $session->destroy();
+
+        // Redirigir al formulario de inicio de sesión (login)
+        return redirect()->to('/');
     }
 }

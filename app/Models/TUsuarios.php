@@ -1,6 +1,5 @@
 <?php
 
-#Modelo para los usuarios
 namespace App\Models;
 
 use CodeIgniter\Model;
@@ -8,17 +7,21 @@ use CodeIgniter\Model;
 class TUsuarios extends Model
 {
     // Nombre de la tabla
-    protected $table = 'usuarios';
-    // Clave primaria de la tabla de los usuarios
-    protected $primaryKey = 'id';
-    // Otras protecciones
-    protected $allowFields = ['nombre', 'apellidos','username','correo','contrasena','rol'];
+    protected $table = 't_usuarios'; 
+    // clave primaria'de esta tabla
+    protected $primaryKey = 'id_usuario'; 
 
-    // Obtener Datos del usuario
+    protected $allowedFields = ['nombre', 'apellidos', 'cargo', 'e_mail', 'usuario', 'password', 'type_usuario'];
+
+    // Obtener Datos del Usuario
     public function obtenerUsuario($data)
     {
-        $username = $this->db->table('usuarios');
-        $username -> where($data);
-        return $username -> get()->getResultArray();
+
+        $usuario = $this->db->table('t_usuarios');
+        $usuario ->where($data);
+        return $usuario->get()->getResultArray();
+
     }
+
+    
 }
