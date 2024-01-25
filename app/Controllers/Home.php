@@ -2,19 +2,21 @@
 
 namespace App\Controllers;
 
+// Modelos TUsuarios para el manejo de los usuarios a ingresar
 use App\Models\TUsuarios;
+
+
+use CodeIgniter\Controller;
 
 class Home extends BaseController
 {
-    
-    // Página de Inicio (Login)
-    public function index(): string
+    // Mostrar formulario de inicio de sesión
+    public function index()
     {
         $mensaje = session('mensaje');
         return view('login', ["mensaje" => $mensaje]);
     }
 
-    // Procesar datos en el Login
     // Procesar datos de inicio de sesión
     public function login()
     {
@@ -49,28 +51,30 @@ class Home extends BaseController
         }
     }
 
-
-    // Página de Resumen General
-    public function resumen_general()
+    // Pantalla de Administración
+    public function administracion()
     {
-        // Verificar usuarios auth
+        // Verificar si el usuario está autenticado
         $session = session();
-        if (!$session->has('id_usuario')) {
+        if (!$session->has('usuario_id')) {
+            // Si no está autenticado, redirigir al formulario de inicio de sesión
             return redirect()->to('/');
         }
 
-        // Pantalla del Resumen General del Proyecto
-        return view('/inventario/home');
+        
+        // Usuario autenticado, mostrar la pantalla de administración
+        return view('inventario/resumen');
+        
     }
 
-    // Salir del Proyecto
+    // Cerrar sesión
     public function logout()
     {
-        // Destruir y salir de la sesión
+        // Destruir la sesión
         $session = session();
         $session->destroy();
 
-        // Redirigir al formulario de inicio de sesión (login)
+        // Redirigir al formulario de inicio de sesión
         return redirect()->to('/');
     }
 }

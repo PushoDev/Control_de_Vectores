@@ -5,14 +5,15 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
-#Pantalla del Login para auth usuarios
+// Rutas del login inicio original de la App
 $routes->get('/', 'Home::index');
-//Metodos del login
+// Metodos del login
 $routes->post('home/login', 'Home::login');
+
+
+// Administracion General
+$routes->get('/inventario/resumen_general', 'Home::administracion');
+
 
 // Salir del proyecto
 $routes->get('/logout', 'Home::logout');
-
-#Pantalla Principal del C.R.U.D para trabajo de los usuarios
-$routes->get('/inventario/resumen_general', 'Home::resumen_general');
