@@ -1,4 +1,4 @@
-<!-- 
+<!--
 * Copyright 2023 Luis Alberto Guisado (Pusho.Dev)
 -->
 <!DOCTYPE html>
@@ -34,13 +34,13 @@
         <div class="full-reset container-menu-movile custom-scroll-containers">
             <div class="logo full-reset all-tittles">
                 <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                sistema bibliotecario
+                Control de Vectores
             </div>
             <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                 <figure>
                     <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Biblioteca" class="img-responsive center-box" style="width:55%;">
                 </figure>
-                <p class="text-center" style="padding-top: 15px;">Sistema Bibliotecario</p>
+                <p class="text-center" style="padding-top: 15px;">Control de Vectores</p>
             </div>
             <div class="full-reset nav-lateral-list-menu">
                 <ul class="list-unstyled">
@@ -92,7 +92,7 @@
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="<?php echo base_url('assets/img/user01.png'); ?>" alt="user-picture" class="img-responsive img-circle center-box">
+                    <img src="<?php echo base_url('assets/img/user01.png'); ?>" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -113,87 +113,94 @@
         </nav>
         <div class="container">
             <div class="page-header">
-              <h1 class="all-tittles">Sistema bibliotecario <small>Inicio</small></h1>
+                <h1 class="all-tittles"> Resumen General
+                    <br>
+                    <small>
+                        Bienvenidos al gestor de Control de Vectores, evaluación de los diferentes casos con sospecha de infeccines transmitidas por el
+                        mosquito Aedes Aegypti
+                    </small
+                </h1>
             </div>
         </div>
+
+
         <section class="full-reset text-center" style="padding: 40px 0;">
             <article class="tile">
-                <div class="tile-icon full-reset"><i class="zmdi zmdi-face"></i></div>
-                <div class="tile-name all-tittles">administradores</div>
+                <div class="tile-icon full-reset"><i class="zmdi zmdi-local-hotel"></i></div>
+                <div class="tile-name all-tittles">síndromes febriles</div>
                 <div class="tile-num full-reset">7</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-accounts"></i></div>
-                <div class="tile-name all-tittles">estudiantes</div>
+                <div class="tile-name all-tittles">tratamiento focal</div>
                 <div class="tile-num full-reset">70</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-male-alt"></i></div>
-                <div class="tile-name all-tittles">docentes</div>
+                <div class="tile-name all-tittles">control de la calidad</div>
                 <div class="tile-num full-reset">11</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-male-female"></i></div>
-                <div class="tile-name all-tittles" style="width: 90%;">personal administrativo</div>
+                <div class="tile-name all-tittles" style="width: 90%;">centros cerrados</div>
                 <div class="tile-num full-reset">17</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-truck"></i></div>
-                <div class="tile-name all-tittles">proveedores</div>
+                <div class="tile-name all-tittles">perifocal</div>
                 <div class="tile-num full-reset">21</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-book"></i></div>
-                <div class="tile-name all-tittles">libros</div>
+                <div class="tile-name all-tittles">certificación focal</div>
                 <div class="tile-num full-reset">77</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-bookmark-outline"></i></div>
-                <div class="tile-name all-tittles">categorías</div>
+                <div class="tile-name all-tittles">radiobatidas</div>
                 <div class="tile-num full-reset">11</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-assignment-account"></i></div>
-                <div class="tile-name all-tittles">secciones</div>
+                <div class="tile-name all-tittles">centros positivos</div>
                 <div class="tile-num full-reset">17</div>
             </article>
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-timer"></i></div>
-                <div class="tile-name all-tittles">reservaciones</div>
+                <div class="tile-name all-tittles">listado de focos</div>
                 <div class="tile-num full-reset">10</div>
             </article>
-            <article class="tile">
-                <div class="tile-icon full-reset"><i class="zmdi zmdi-time-restore"></i></div>
-                <div class="tile-name all-tittles" style="width: 90%;">devoluciones pendientes</div>
-                <div class="tile-num full-reset">9</div>
-            </article>
-            <article class="tile">
-                <div class="tile-icon full-reset"><i class="zmdi zmdi-calendar"></i></div>
-                <div class="tile-name all-tittles">préstamos</div>
-                <div class="tile-num full-reset">7</div>
-            </article>
+            
             <article class="tile">
                 <div class="tile-icon full-reset"><i class="zmdi zmdi-trending-up"></i></div>
                 <div class="tile-name all-tittles" style="width: 90%;">reportes y estadísticas</div>
                 <div class="tile-num full-reset">&nbsp;</div>
             </article>
+
+
         </section>
+
+        <!-- Cartel de Ayuda para el Usuario -->
         <div class="modal fade" tabindex="-1" role="dialog" id="ModalHelp">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center all-tittles">ayuda del sistema</h4>
-                </div>
-                <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore dignissimos qui molestias ipsum officiis unde aliquid consequatur, accusamus delectus asperiores sunt. Quibusdam veniam ipsa accusamus error. Animi mollitia corporis iusto.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-center all-tittles">Ayuda del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Control de Vectores es un proyecto sencillo, el slogan de los iconos muestra las estructura de esta aplicación. Esta es simplemente una versión la cuál es una prueba,
+                        sirve además para cualquier consultorio médico de muestro país o policlínicos. En caso de alguna sugerencia contácteme: bethocubans1990@gmail.com o +5355572430. estamos para
+                        servirle...;*
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> &nbsp; De acuerdo</button>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
+
+        <!-- Cartel de Autor del Proyecto -->
         <footer class="footer full-reset">
             <div class="container-fluid">
                 <div class="row">

@@ -1,4 +1,4 @@
-<?php
+"<?php
 
 use CodeIgniter\Router\RouteCollection;
 
@@ -16,3 +16,7 @@ $routes->get('/logout', 'Home::logout');
 
 #Pantalla Principal del C.R.U.D para trabajo de los usuarios
 $routes->get('/inventario/resumen_general', 'Home::resumen_general');
+
+#Pantalla de Sindrome Febriles
+// Rutas para sindromes febriles
+
