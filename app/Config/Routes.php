@@ -19,4 +19,4 @@ $routes->get('/inventario/resumen_general', 'Home::resumen_general');
 
 #Pantalla de Sindrome Febriles
 // Rutas para sindromes febriles
-
+$routes->get('/higiene_epidemiologia/muevo_sindrome_febril', 'Home::sindrome_febril_nuevo');

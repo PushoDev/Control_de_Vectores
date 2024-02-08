@@ -64,6 +64,13 @@ class Home extends BaseController
         return view('/inventario/home');
     }
 
+    // Nuevo Sindrome Febril
+    public function sindrome_febril_nuevo()
+    {
+        // Pantalla de agregar nuevo sindrome febril
+        return view('/inventario/nuevo_caso_add');
+    }
+
     // Salir del Proyecto
     public function logout()
     {
