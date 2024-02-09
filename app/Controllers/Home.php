@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\TUsuarios;
+use App\Models\SindromesFebrilesModel;
 
 use CodeIgniter\Controller;
 
@@ -64,13 +65,6 @@ class Home extends BaseController
         return view('/inventario/home');
     }
 
-    // Nuevo Sindrome Febril
-    public function sindrome_febril_nuevo()
-    {
-        // Pantalla de agregar nuevo sindrome febril
-        return view('/inventario/nuevo_caso_add');
-    }
-
     // Salir del Proyecto
     public function logout()
     {
@@ -81,4 +75,43 @@ class Home extends BaseController
         // Redirigir al formulario de inicio de sesión (login)
         return redirect()->to('/');
     }
+
+    #  A PARTIR DE AQUI SON LAS FUNCIONALIDADES
+    #  PRINCIPALES DEL PROYECTO
+    #  TANTO PARA ADMINISTRADORES
+    #  EPIDEMIOLOGO Y ESTADISTICOS ...
+
+    // Nuevo Sindrome Febril
+    public function sindrome_febril_nuevo()
+    {
+        // Pantalla de agregar nuevo sindrome febril
+        return view('/inventario/nuevo_caso_add');
+    }
+
+    // Guardar los datos en la tabla y los datos de sundromes febriles
+    public function guardar_sindromes_febriles()
+    {
+        // Valida los datos del formulario
+        $validation =  \Config\Services::validation();
+        $validation->setRules([
+            // Define las reglas de validación según el modelo
+            'fecha_encuetro' => 'required|valid_date',
+            'nombre_y_apellidos' => 'required|max_length[255]',
+            // Agrega las demás reglas de validación aquí
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            // Si la validación falla, redirige de vuelta al formulario con los errores
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        // Si la validación es exitosa, guarda los datos en la base de datos
+        $sindromesFebrilesModel = new SindromesFebrilesModel();
+        $sindromesFebrilesModel->save($this->request->getPost());
+
+        // Redirige a una página de éxito o a donde desees
+        return redirect()->to('/inventario/home')->with('success', 'Los datos se han guardado correctamente.');
+    }
+
+    
 }

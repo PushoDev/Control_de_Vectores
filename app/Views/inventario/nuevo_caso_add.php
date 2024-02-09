@@ -1,6 +1,7 @@
-<!--
-* Copyright 2023 Luis Alberto Guisado (Pusho.Dev)
+<!-- *
+Copyright 2023 Luis Alberto Guisado (Pusho.Dev)
 -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -94,7 +95,7 @@
         <nav class="navbar-user-top full-reset">
             <ul class="list-unstyled full-reset">
                 <figure>
-                   <img src="<?php echo base_url('assets/img/user01.png') ?>" alt="user-picture" class="img-responsive img-circle center-box">
+                    <img src="<?php echo base_url('assets/img/user01.png') ?>" alt="user-picture" class="img-responsive img-circle center-box">
                 </figure>
                 <li style="color:#fff; cursor:default;">
                     <span class="all-tittles">Admin Name</span>
@@ -132,7 +133,7 @@
                     <img src="<?php echo base_url('assets/img/user04.png') ?>" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección para registrar un nuevo proveedor, debes de llenar todos los campos del siguiente formulario para poder registrar un proveedor
+                    Sección para registrar un nuevo caso, debes de llenar todos los campos del siguiente formulario para poder registrar a la persona la cuál tiene sospecha de alguna enfermedad con fiebre o sospechosas de alguna transmitida por el Mosquito ...
                 </div>
             </div>
         </div>
@@ -148,47 +149,84 @@
         </div>
         <div class="container-fluid">
             <div class="container-flat-form">
-                <div class="title-flat-form title-flat-blue">Agregar un nuevo proveedor</div>
-                <form autocomplete="off">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                            <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Nombre de proveedor" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe el nombre del proveedor">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Nombre del proveedor</label>
-                            </div>
-                            <div class="group-material">
-                                <input type="email" class="material-control tooltips-general" placeholder="Email de proveedor" maxlength="50" data-toggle="tooltip" data-placement="top" title="Escribe el Email del proveedor">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Email</label>
-                            </div>
-                            <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Dirección de proveedor" required="" maxlength="70" data-toggle="tooltip" data-placement="top" title="Escribe la dirección del proveedor">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Dirección</label>
-                            </div>
-                            <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Teléfono de proveedor" required="" pattern="[0-9]{8,8}" maxlength="8" data-toggle="tooltip" data-placement="top" title="Solo números, mínimo 8 dígitos">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Teléfono</label>
-                            </div>
-                            <div class="group-material">
-                                <input type="text" class="material-control tooltips-general" placeholder="Responsable de atención" required="" maxlength="50" data-toggle="tooltip" data-placement="top" title="Responsable de atención">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Responsable de atención</label>
-                            </div>
-                            <p class="text-center">
-                                <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
-                                <button type="submit" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
-                            </p>
+
+                <!-- Formualrio para agregar o editar casos de sindromes Febriles -->
+                <div class="title-flat-form title-flat-blue">Agregar un Caso de Síndrome Febril</div>
+
+                <!-- FORMULARIO -->
+                <form action="<?php echo base_url('guardar-sindromes-febriles');?>" method="post" autocomplete="off">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                        <div class="group-material">
+                            <input type="text" name="nombre_y_apellidos" class="material-control tooltips-general" placeholder="Nombre y Apellidos" required maxlength="255" data-toggle="tooltip" data-placement="top" title="Escribe el nombre y apellidos del paciente">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Nombre y Apellidos del Paciente</label>
                         </div>
+
+                        <div class="group-material">
+                            <input type="date" name="fecha_encuetro" class="material-control tooltips-general" placeholder="Fecha de Encuentro" required data-toggle="tooltip" data-placement="top" title="Seleccione la fecha de encuentro">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Fecha de Encuentro</label>
+                        </div>
+
+                        <div class="group-material">
+                            <input type="number" name="edad" class="material-control tooltips-general" placeholder="Edad" required min="0" max="150" data-toggle="tooltip" data-placement="top" title="Escribe la edad del paciente">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Edad</label>
+                        </div>
+
+                        <div class="group-material">
+                            <select name="sexo" class="material-control tooltips-general" required data-toggle="tooltip" data-placement="top" title="Seleccione el sexo del paciente">
+                                <option value="">Seleccione el Sexo</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Sexo</label>
+                        </div>
+
+                        <div class="group-material">
+                            <input type="text" name="direccion_de_residencia" class="material-control tooltips-general" placeholder="Dirección de Residencia" required maxlength="255" data-toggle="tooltip" data-placement="top" title="Escribe la dirección de residencia del paciente">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Dirección de Residencia</label>
+                        </div>
+
+                        <div class="group-material">
+                            <input type="text" name="municipio" class="material-control tooltips-general" placeholder="Municipio" required maxlength="255" data-toggle="tooltip" data-placement="top" title="Escribe el municipio del paciente">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Municipio</label>
+                        </div>
+
+                        <div class="group-material">
+                            <input type="text" name="hospital" class="material-control tooltips-general" placeholder="Hospital" required maxlength="255" data-toggle="tooltip" data-placement="top" title="Escribe el hospital del paciente">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Hospital</label>
+                        </div>
+
+                        <div class="group-material">
+                            <input type="text" name="area_de_salud" class="material-control tooltips-general" placeholder="Área de Salud" required maxlength="255" data-toggle="tooltip" data-placement="top" title="Escribe el área de salud del paciente">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Área de Salud</label>
+                        </div>
+
+                        <p class="text-center">
+                            <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
+                            <button type="submit" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>
+                        </p>
+
                     </div>
+                </div>
+
                 </form>
+                
             </div>
         </div>
 
