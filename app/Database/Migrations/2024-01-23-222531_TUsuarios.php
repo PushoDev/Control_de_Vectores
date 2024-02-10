@@ -41,7 +41,9 @@ class TUsuarios extends Migration
             ],
             'type_usuario' => [
                 'type' => 'ENUM',
-                'constraint' => ['admin', 'estadistico', 'epidemiologo'], // Definir los roles de los usuarios
+                // Definir los roles de los usuarios
+                'constraint' => ['admin', 'estadistico', 'epidemiologo'],
+                // Usuario Predeterminado
                 'default' => 'admin',
             ],
         ]);

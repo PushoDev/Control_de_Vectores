@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\TUsuarios;
 
+use CodeIgniter\Controller;
+
 class Home extends BaseController
 {
     
@@ -15,7 +17,6 @@ class Home extends BaseController
     }
 
     // Procesar datos en el Login
-    // Procesar datos de inicio de sesión
     public function login()
     {
         // Obtener datos del formulario
@@ -41,8 +42,8 @@ class Home extends BaseController
             
             // Redirigir a la pantalla de administración
             return redirect()->to(base_url('/inventario/resumen_general'));
-        } 
-        else 
+        }
+        else
         {
             // Credenciales incorrectas, mostrar mensaje de error
             return redirect()->to(base_url('/'))->with('mensaje', '0');
@@ -54,13 +55,20 @@ class Home extends BaseController
     public function resumen_general()
     {
         // Verificar usuarios auth
-        $session = session();
-        if (!$session->has('id_usuario')) {
-            return redirect()->to('/');
-        }
+        // $session = session();
+        // if (!$session->has('id_usuario')) {
+        //     return redirect()->to('/');
+        // }
 
         // Pantalla del Resumen General del Proyecto
         return view('/inventario/home');
+    }
+
+    // Nuevo Sindrome Febril
+    public function sindrome_febril_nuevo()
+    {
+        // Pantalla de agregar nuevo sindrome febril
+        return view('/inventario/nuevo_caso_add');
     }
 
     // Salir del Proyecto
